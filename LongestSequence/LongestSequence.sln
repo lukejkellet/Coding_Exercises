@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseString", "..\Reverse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "..\Palindrome\Palindrome.csproj", "{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfDigits", "..\SumOfDigits\SumOfDigits.csproj", "{44DC4644-68AF-40DD-B524-A84997DEC850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoSums", "..\TwoSums\TwoSums.csproj", "{085B02CF-13CD-4C15-9231-40093AA396F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DC4644-68AF-40DD-B524-A84997DEC850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DC4644-68AF-40DD-B524-A84997DEC850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DC4644-68AF-40DD-B524-A84997DEC850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DC4644-68AF-40DD-B524-A84997DEC850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085B02CF-13CD-4C15-9231-40093AA396F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085B02CF-13CD-4C15-9231-40093AA396F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085B02CF-13CD-4C15-9231-40093AA396F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085B02CF-13CD-4C15-9231-40093AA396F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
