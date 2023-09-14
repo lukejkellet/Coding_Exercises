@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondPattern", "..\Diamon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseString", "..\ReverseString\ReverseString.csproj", "{7DFE0F33-2847-4EB2-8B7D-3C42C3732897}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palindrome", "..\Palindrome\Palindrome.csproj", "{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7DFE0F33-2847-4EB2-8B7D-3C42C3732897}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFE0F33-2847-4EB2-8B7D-3C42C3732897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFE0F33-2847-4EB2-8B7D-3C42C3732897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF131CB9-330D-4C39-8C4F-BA3E57219E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
