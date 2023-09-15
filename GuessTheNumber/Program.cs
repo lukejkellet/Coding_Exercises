@@ -29,9 +29,18 @@ namespace GuessTheNumber
         {
             while (guesses != 0)
             {
-                Console.WriteLine("Guess the number between 1 and 100. \nLives Remaining: {0}", guesses);
-                int userGuess = Convert.ToInt32(Console.ReadLine());
-                if (userGuess == number)
+                int userGuess;
+                try //Catch user input, and make sure it is a number.
+                {
+                    Console.WriteLine("Guess the number between 1 and 100. \nLives Remaining: {0}", guesses);
+                    userGuess = Convert.ToInt32(Console.ReadLine());
+                } catch (Exception e) //Error handling for improper input.
+                {
+                    Console.WriteLine("You must enter a number!");
+                    continue; //Restarts the loop.
+                }
+ 
+                if (userGuess == number) //User guessed correctly.
                 {
                     return true;
                 }
@@ -45,7 +54,7 @@ namespace GuessTheNumber
                     guesses--;
                 }
             }
-            return false;
+            return false; //Executes if the user ran out of lives.
         }
     }
 }
