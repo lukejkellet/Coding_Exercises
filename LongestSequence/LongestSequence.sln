@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextPrimeNumber", "..\NextP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNumber", "..\GuessTheNumber\GuessTheNumber.csproj", "{40A0E3F5-16A4-4410-B205-062AA4336742}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangmanGame", "..\HangmanGame\HangmanGame.csproj", "{E2A3D0E7-FBF3-4AE5-857A-EFAA209A915E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{40A0E3F5-16A4-4410-B205-062AA4336742}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40A0E3F5-16A4-4410-B205-062AA4336742}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A0E3F5-16A4-4410-B205-062AA4336742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2A3D0E7-FBF3-4AE5-857A-EFAA209A915E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2A3D0E7-FBF3-4AE5-857A-EFAA209A915E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2A3D0E7-FBF3-4AE5-857A-EFAA209A915E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2A3D0E7-FBF3-4AE5-857A-EFAA209A915E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
