@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,63 +11,77 @@ namespace HangmanGame
     {
         static void Main(string[] args)
         {
-            //Pick a word at random.
+            //Call fuction to fetch words from file
+            String[] wordList = GetWords();
             Random random = new Random();
-            String[] wordList = { "apple", "banana", "orange", "pear", "grape", "pineapple", "strawberry", "blueberry", "raspberry", "blackberry" };
-            String word = wordList[random.Next(0, wordList.Length)];
-            int guesses = 6;
-            bool gameWon = Hangman(word, guesses);
-            if (gameWon)
-            {
-                Console.WriteLine("Well done! You successfully deciphered the word!");
-            }
-            else
-            {
-                Console.WriteLine("Oh no! You ran out of lives! The word was {0}", word);
-            }
-            Console.ReadLine();
-        }
-        static bool Hangman(String word, int guesses)
-        {
-            //Convert word to underscores.
-            String hiddenWord = "";
-            for (int i = 0; i < word.Length; i++)
-            {
-                hiddenWord += "_";
-            }
+            Hangman hangman = new Hangman(wordList[random.Next(0, wordList.Length)]);
+            bool gameWon = false;
 
-            while (guesses != 0)
+            //Game loop
+            while (true)
             {
                 String userGuess;
-                Console.WriteLine("Guess the word, or one of the letters you think might be in it. \nHidden Word: {0} \nLives Remaining: {1}", hiddenWord, guesses);
+                Console.WriteLine("Guess the word, or one of the letters you think might be in it. \nHidden Word: {0} \nLives Remaining: {1}", hangman.getHiddenWord(), hangman.getGuesses());
                 userGuess = Console.ReadLine();
                 userGuess = userGuess.ToLower();
 
-                if (userGuess == word) //User guessed correctly.
+                if (hangman.checkWord(userGuess)) //User guessed correctly.
                 {
-                    return true;
+                    gameWon = true;
+                    break; //Victory
                 }
-                //Check if the user guessed a letter, and if that letter is in the word.
-                else if (userGuess.Length == 1 && word.Contains(userGuess))
+                //Check if the user guessed a letter
+                else if (hangman.checkLetter(userGuess))
                 {
-                    //Replace all instances of the letter in the hidden word.
-                    for (int i = 0; i < word.Length; i++)
-                    {
-                        if (word[i] == userGuess[0])
-                        {
-                            hiddenWord = hiddenWord.Remove(i, 1).Insert(i, userGuess);
-                        }
-                    }
+                    hangman.updateHiddenWord(userGuess);
                 }
                 else
                 {
                     Console.WriteLine("Your guess was incorrect");
-                    guesses--;
+                    hangman.updateGuesses();
+                }
+                //Check remaining guesses
+                if (hangman.getGuesses() == 0) //returns true if the user has lives remaining.
+                {
+                    break; //Game over
                 }
             }
-            return false; //Executes if the user ran out of lives.
+
+            if (gameWon)
+            {
+                Console.WriteLine("Well done! You successfully deciphered the word {0}!", hangman.getAnswer());
+            }
+            else
+            {
+                Console.WriteLine("Oh no! You ran out of lives! The word was {0}", hangman.getAnswer());
+            }
+            Console.ReadLine();
         }
 
+        static String[] GetWords()
+        {
+            String[] wordList;
+            try
+            {
+                //Set path to file
+                string path = @"files/words.txt";
+                //Get file from path.
+                string filename = Path.GetFileName(path);
 
+                using (var streamreader = new StreamReader(path))
+                {
+                    //Fill array with words from file.
+                    wordList = streamreader.ReadToEnd().Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                }
+                return wordList; //Return array to main.
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("The file could not be read.");
+                Console.ReadLine();
+                Environment.Exit(0); //Exit program.
+            }
+            return null;
+        }
     }
 }
